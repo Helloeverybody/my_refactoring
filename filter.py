@@ -23,7 +23,7 @@ def main():
     gradation_step = 255 // gradations_count
 
     res = Image.fromarray(convert_image_to_mosaic(image, block_size, gradation_step))
-    res.save(input("Введите имя файла, в которой хотите сохранить результат: "))
+    res.save(input("Введите имя файла, в которой хотите сохранить результат: ") + ".jpg")
 
 
 if __name__ == '__main__':

@@ -25,4 +25,4 @@ while i < a - 11:
         j = j + 10
     i = i + 10
 res = Image.fromarray(arr)
-res.save('res.jpg')
+res.save('scale1200.jpg')
