@@ -11,7 +11,7 @@ def convert_image_to_mosaic(image, size, gradation_step):
 
     :return: [[[int, int, int]]]
 
-    >>> convert_image_to_mosaic((np.ones((3, 3, 3)) * 200), 2, 15)
+    />>> convert_image_to_mosaic((np.ones((3, 3, 3)) * 200), 2, 15)
     array([[[195., 195., 195.],
             [195., 195., 195.],
             [ 90.,  90.,  90.]],
@@ -40,13 +40,13 @@ def get_average_brightness(block, size, gradation_step):
     :param gradation_step: int
     :return int
 
-    >>> get_average_brightness(np.ones((3, 3, 3)) * 200, 2, 15)
+    />>> get_average_brightness(np.ones((3, 3, 3)) * 200, 2, 15)
     195
-    >>> get_average_brightness(np.ones((3, 3, 3)) * 100, 2, 15)
+    />>> get_average_brightness(np.ones((3, 3, 3)) * 100, 2, 15)
     90
-    >>> get_average_brightness(np.ones((3, 3, 3)) * 100, 6, 6)
+    />>> get_average_brightness(np.ones((3, 3, 3)) * 100, 6, 6)
     24
-    >>> get_average_brightness(np.ones((10, 10, 3)) * 100, 6, 6)
+    />>> get_average_brightness(np.ones((10, 10, 3)) * 100, 6, 6)
     96
     """
     average_color = (block[:size, :size].sum() / 3) // size ** 2
