@@ -3,7 +3,7 @@ import numpy as np
 
 
 def convert_image_to_mosaic(image, size, gradation_step):
-    '''
+    """
     Переводит картинку в пиксельную мозаику
     :param image: [[[int, int, int]]]
     :param size: int
@@ -24,7 +24,7 @@ def convert_image_to_mosaic(image, size, gradation_step):
             [ 90.,  90.,  90.],
             [ 45.,  45.,  45.]]])
 
-    '''
+    """
     for x in range(0, len(image), size):
         for y in range(0, len(image[0]), size):
             image[x:x + size, y:y + size] = get_average_brightness(
@@ -33,7 +33,7 @@ def convert_image_to_mosaic(image, size, gradation_step):
 
 
 def get_average_brightness(block, size, gradation_step):
-    '''
+    """
     Берет усередненный серый цвет области
     :param block: [[[int, int, int]]]
     :param size: int
@@ -48,17 +48,17 @@ def get_average_brightness(block, size, gradation_step):
     24
     >>> get_average_brightness(np.ones((10, 10, 3)) * 100, 6, 6)
     96
-    '''
+    """
     average_color = (block[:size, :size].sum() / 3) // size ** 2
     a = int(average_color // gradation_step) * gradation_step
     return a
 
 
 def main():
-    '''
+    """
     Загружает картинку, отправляет ее в метод пикселизации,
     а затем сохраняет полученный результат в файл
-    '''
+    """
     image_file = Image.open("scale1200.jpg")
     block_size = 10
     gradations_count = 50
